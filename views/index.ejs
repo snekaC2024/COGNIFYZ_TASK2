@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extended Form</title>
+</head>
+<body style="font-family: Arial, sans-serif; background: linear-gradient(to right, #82b2f0, #f8a8d3); text-align: center; margin: 0; padding: 0;">
+
+    <div style="max-width: 500px; margin: 50px auto; background: #ffffff; padding: 20px; border-radius: 10px; 
+                box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); border: 2px solid #b7f5c4; color: #000000;">
+        <h1 style="color:#a200ff;">User Registration Form</h1>
+
+        <% if (error) { %>
+            <p style="color: #cbdeff; font-weight: bold;"><%= error %></p>
+        <% } %>
+
+        <form id="myForm" action="/submit" method="POST" onsubmit="return validateForm()">
+            <div style="margin-bottom: 15px;">
+                <label for="username" style="display: block; font-weight: bold;">Username:</label>
+                <input type="text" id="username" name="username" required 
+                    style="width: 90%; padding: 10px; border: 1px solid #64b5f6; border-radius: 5px; background: white;">
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="email" style="display: block; font-weight: bold;">Email:</label>
+                <input type="email" id="email" name="email" required 
+                    style="width: 90%; padding: 10px; border: 1px solid #64b5f6; border-radius: 5px; background: white;">
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="phone" style="display: block; font-weight: bold;">Phone Number:</label>
+                <input type="number" id="phone" name="phone" required 
+                    style="width: 90%; padding: 10px; border: 1px solid #64b5f6; border-radius: 5px; background: white;">
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="dob" style="display: block; font-weight: bold;">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required 
+                    style="width: 90%; padding: 10px; border: 1px solid #64b5f6; border-radius: 5px; background: white; color: #000000;">
+            </div> 
+
+            <div style="margin-bottom: 15px;">
+                <label for="gender" style="display: block; font-weight: bold;">Gender:</label>
+                <select id="gender" name="gender" required 
+                    style="width: 95%; padding: 10px; border: 1px solid #64b5f6; border-radius: 5px; background: white; color: #000000;">
+                    <option value="">Select</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label for="address" style="display: block; font-weight: bold;">Address:</label>
+                <input type="text" id="address" name="address" required 
+                    style="width: 90%; padding: 10px; border: 1px solid #64b5f6; border-radius: 5px; background: white;;">
+            </div>
+
+            <button type="submit" 
+                style="background-color: #055ad9; color: white; border: none; padding: 12px 20px; border-radius: 5px; cursor: pointer; font-size: 16px;">
+                Submit
+            </button>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            let username = document.getElementById("username").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let phone = document.getElementById("phone").value.trim();
+            let dob = document.getElementById("dob").value.trim();
+            let gender = document.getElementById("gender").value.trim();
+            let address = document.getElementById("address").value.trim();
+
+            if (!username || !email || !phone || !dob || !gender || !address) {
+                alert("All fields are required!");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+
+</body>
+</html>

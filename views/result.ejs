@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submission Result</title>
+</head>
+<body style="font-family: Arial, sans-serif; background: linear-gradient(to right, #f8a8d3,#82b2f0); text-align: center; margin: 0; padding: 0;">
+
+    <div style="max-width: 500px; margin: 50px auto; background: rgb(255, 255, 255); padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+        <h1 style="color: #a200ff;">Form Submitted Successfully</h1>
+
+        <p><strong>Username:</strong> <%= userData.username %></p>
+        <p><strong>Email:</strong> <%= userData.email %></p>
+        <p><strong>Phone:</strong> <%= userData.phone %></p>
+        <p><strong>Date of Birth:</strong> <%= userData.dob %></p>
+        <p><strong>Gender:</strong> <%= userData.gender %></p>
+        <p><strong>Address:</strong> <%= userData.address %></p>
+
+        <a href="/" 
+            style="display: inline-block; margin-top: 15px; background-color: #0b6ed8; color: white; text-decoration: none; padding: 10px 20px; border-radius: 5px;">
+            Go Back
+        </a>
+    </div>
+
+</body>
+</html>
